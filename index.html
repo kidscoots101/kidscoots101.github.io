@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./images/title.png" style="border-radius: 10px;"/>
     <title>Caleb Han | Portfolio</title>
-    <!-- Include Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
@@ -152,6 +151,7 @@
                 height: 420px;
                 border-radius: 10px;
                 background-color: #E5E1DA;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             }
 
             body.dark-mode .project-item {
@@ -179,7 +179,8 @@
                 padding: 20px;
                 max-width: 100%;
                 max-width: 300px; 
-                height: 450px
+                height: 500px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             }
             body.dark-mode .project-item {
                 background-color: #F3F8FF;
@@ -242,7 +243,26 @@ body.dark-mode .experience {
             margin-bottom: 5px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        
+        .mac-buttons {
+            right: 10px;
+            display: flex;
+            margin-bottom: 10px;
+        }
+        .mac-button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-left: 4px;
+        }
+        .mac-button.red {
+            background-color: #ff5f56;
+        }
+        .mac-button.yellow {
+            background-color: #ffbd2e;
+        }
+        .mac-button.green {
+            background-color: #27c93f;
+        }
     </style>
 </head>
 <body>
@@ -269,6 +289,7 @@ body.dark-mode .experience {
         <h2 class="project-title">Cool projects</h2>
       <div class="projects-grid" id="projectsGrid">
 </div>
+
     <script>
     var projectsData = {
         "projects": [
@@ -284,7 +305,7 @@ body.dark-mode .experience {
             "imageSrc": "./images/fishml.png",
             "link": "https://github.com/kidscoots101/FishML",
             "skills": ["Python", "Machine Learning", "CNN"],
-            "description": "Use of CNNs to provide sequential layering of images and detect trends to classify images accordingly - with complex Machine Learning Algorithms."
+            "description": "Use of CNNs to provide sequential layering of images and detect trends to classify images accordingly."
         },
         {
             "name": "Project \"Proration\"",
@@ -306,11 +327,16 @@ body.dark-mode .experience {
     function generateProjectHTML(project) {
         return `
         <div class="project-item">
-            <img src="${project.imageSrc}" alt="${project.name}" class="project-img">
-            <h3>${project.name} <a href="${project.link}" target="_blank" style="color: #ce394a"><i class="fas fa-external-link-alt"></i></a> </h3>
-            ${project.skills.map(skill => `<span class="skill-pill">${skill}</span>`).join('')}
-            <p>${project.description}</p>
-        </div>
+            <div class="mac-buttons">
+                    <div class="mac-button red"></div>
+                    <div class="mac-button yellow"></div>
+                    <div class="mac-button green"></div>
+                </div>
+                <img src="${project.imageSrc}" alt="${project.name}" class="project-img">
+                <h3>${project.name} <a href="${project.link}" target="_blank" style="color: #ce394a"><i class="fas fa-external-link-alt"></i></a> </h3>
+                ${project.skills.map(skill => `<span class="skill-pill">${skill}</span>`).join('')}
+                <p>${project.description}</p>
+            </div>
         `;
     }
 
@@ -344,13 +370,11 @@ body.dark-mode .experience {
                                 Curated custom web designs for clients to be able to showcase projects, awards, and more about
                                 themselves. <br /> <br />
                                 Boosted clients personal branding online.
-                            </p>
+                    </p>
             </div>
             </h3>
         </div>
         </div>
-
-
     </div>
     <script>
         const darkModeToggle = document.getElementById('dark-mode-toggle');
@@ -375,11 +399,9 @@ body.dark-mode .experience {
         });
         const colors = ['#ce394a', '#2e86de', '#27ae60', '#f39c12'];
 
-// Get a random color from the array
 const randomIndex = Math.floor(Math.random() * colors.length);
 const randomColor = colors[randomIndex];
 
-// Apply the random color to all elements with class .skill-pill
 const skillPills = document.querySelectorAll('.skill-pill');
 skillPills.forEach((pill) => {
     pill.style.backgroundColor = randomColor;
