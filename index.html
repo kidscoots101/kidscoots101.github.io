@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./images/title.png" style="border-radius: 10px;"/>
-    <title>Caleb Han | Portfolio</title>
+    <title>Caleb Han</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
@@ -195,10 +195,12 @@
     display: flex;
     flex-direction: row;
     align-items: center; 
-    margin-top: 30px;
+    /* margin-top: 15px; */
     background-color: #E5E1DA;
     border-radius: 10px;
-    width: 60%;
+    width: 61%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
 }
 
 body.dark-mode .experience {
@@ -217,7 +219,7 @@ body.dark-mode .experience {
     border-radius: 10px;
 }
 .experience-container {
-    display: flex; flex-direction: row; max-width: 80%; gap: 20px;
+     display: flex;flex-direction: column; max-width: 80%; gap: 20px;
 }
 
 
@@ -287,8 +289,8 @@ body.dark-mode .experience {
             <p>A striving start-up founder; and a full-time student.</p>
         </div>
         <!-- <h2 class="project-title">Cool projects</h2> -->
-      <div class="projects-grid" id="projectsGrid">
-</div>
+      <div class="projects-grid" id="projectsGrid" style="margin-top: 25px;">
+    </div>
 
     <script>
     var projectsData = {
@@ -347,9 +349,10 @@ body.dark-mode .experience {
     });
     </script>
 
-        <h2 class="project-title">Experiences</h2>
-        <div class="experience-container">
-        <div class="experience">
+        <!-- <h2 class="project-title">Experiences</h2> -->
+        <div class="experience-container" style="align-items: center;">
+        <div class="experience" style="margin-top: 15px;">
+            
             <img src="./images/growcalth.png" alt="GrowCalth Logo" class="company-logo" style="border-radius: 50px;">
             <div>
                 <h3 >CEO - GrowCalth <a href="https://growcalth.cheesetan.com/" target="_blank" style="color: #ce394a;"><i class="fas fa-external-link-alt"></i></a> <br />
